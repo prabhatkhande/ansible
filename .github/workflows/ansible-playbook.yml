@@ -31,4 +31,4 @@ jobs:
         env:
           ANSIBLE_HOST_KEY_CHECKING: false
         run: |
-          ansible-playbook -i hosts ansible/playbooks/create_user_group.yml
+          ansible-playbook -i hosts ansible/playbooks/dir_list.yml
