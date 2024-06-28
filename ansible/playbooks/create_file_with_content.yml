@@ -1,0 +1,12 @@
+---
+- name: Create a file with content
+  hosts: localhost
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Create and write some data in file
+      copy:
+        content:  |
+          Hello localhost.
+          I an ansible
+        dest: /home/devops/prabhat/Employee/hello.txt

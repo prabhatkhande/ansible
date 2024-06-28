@@ -1,0 +1,9 @@
+---
+- name: Variable example
+  hosts: localhost
+  vars:
+          http_port: 80
+  tasks:
+          - name: just show variable value
+            debug:
+                    msg: "localhost runs on {{  http_port }}"

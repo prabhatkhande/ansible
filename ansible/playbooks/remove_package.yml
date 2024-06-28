@@ -1,0 +1,16 @@
+---
+- name: Uninstall nginx on ubuntu
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+
+          - name: Stop Nginx service if running
+            ansible.builtin.service:
+              name: nginx
+              state: stopped
+            ignore_errors: yes  # Ignore errors if nginx service is not currently running
+
+          - name: Uninstall nginx
+            apt:
+              name: nginx
+              state: absent

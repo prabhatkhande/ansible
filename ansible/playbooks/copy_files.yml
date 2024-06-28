@@ -1,0 +1,9 @@
+---
+- name: Copy files from source to destination
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+    - name: Copy file form source to destination
+      copy:
+        src: /home/devops/prabhat/Employee/hello.txt
+        dest: /home/devops/prabhat/Localhost/hello.txt

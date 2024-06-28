@@ -1,0 +1,9 @@
+---
+- name: Install Software Packages
+  hosts: localhost
+  gather_facts: yes
+  become: yes
+  roles:
+    - install-apache
+    - install-nginx
+    - install-telnet

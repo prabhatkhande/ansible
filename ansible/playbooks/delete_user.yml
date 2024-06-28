@@ -1,0 +1,10 @@
+---
+- name: Create a new user
+  hosts: localhost
+  gather_facts: yes
+  become: yes
+  tasks:
+  - name: Create a user
+    user:
+      name: ghost
+      state: absent

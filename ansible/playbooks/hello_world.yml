@@ -1,0 +1,7 @@
+---
+- name: Hello message from localhost
+  hosts: localhost
+  tasks:
+          - name: hello world
+            debug:
+                    msg: "Hello world! I am localhost"

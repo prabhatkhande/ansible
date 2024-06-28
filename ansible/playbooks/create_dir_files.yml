@@ -1,0 +1,14 @@
+---
+- name: Create a directory
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+          - name: Create a directory called Employee
+            file:
+                    name: /home/devops/prabhat/Employee
+                    state: directory
+
+          - name: Create a folder inside Employee folder
+            file:
+                    name: /home/devops/prabhat/Employee/hello_world.txt
+                    state: touch

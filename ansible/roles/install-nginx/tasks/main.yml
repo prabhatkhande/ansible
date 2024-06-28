@@ -1,0 +1,5 @@
+---
+- name: Install Nginx
+  ansible.builtin.package:
+    name: nginx-core
+    state: present
