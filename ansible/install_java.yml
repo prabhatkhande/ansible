@@ -47,3 +47,7 @@
         path: /usr/lib/jvm/jdk-22.0.1/bin/javac
         state: present
         priority: 2
+   
+   - name: Verify Java Installation
+     shell: |
+      java -version
