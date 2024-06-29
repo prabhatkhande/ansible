@@ -12,3 +12,8 @@
             service:
               name: nginx
               state: started
+
+          - name: Deploy an Webpage
+            copy:
+              src: index.html
+              dest: /usr/share/nginx/html
