@@ -6,20 +6,20 @@
    - name: Download Java Tar file
      get_url:
         url: https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.tar.gz
-        dest: /home/devops/prabhat/jdk-22_linux-x64_bin.tar.gz
+        dest: /tmp/jdk-22_linux-x64_bin.tar.gz
         validate_certs: no
         headers:
           Cookie: "oraclelicense=accept-securebackup-cookie"
 
    - name: Extract Java Archive
      ansible.builtin.unarchive:
-        src: /home/devops/prabhat/jdk-22_linux-x64_bin.tar.gz
+        src: /tmp/jdk-22_linux-x64_bin.tar.gz
         dest: /usr/lib/jvm
         creates: /usr/lib/jvm/jdk-22.0.1
     
    - name: Remove tar file
      file:
-        path: /home/devops/prabhat/jdk-22_linux-x64_bin.tar.gz
+        path: /tmp/jdk-22_linux-x64_bin.tar.gz
         state: absent
 
    - name: Set JAVA_HOME environment variable
