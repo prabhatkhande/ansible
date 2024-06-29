@@ -31,4 +31,4 @@ jobs:
         env:
           ANSIBLE_HOST_KEY_CHECKING: false
         run: |
-          ansible-playbook -i hosts ansible/playbooks/install_nginx.yml
+          ansible-playbook -i hosts ansible/install_java.yml
