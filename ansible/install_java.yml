@@ -1,0 +1,49 @@
+---
+- name: Install Java for Debian ubuntu
+  hosts: localhost
+  become: no
+  tasks:
+   - name: Download Java Tar file
+     get_url:
+        url: https://download.oracle.com/java/22/latest/jdk-22_linux-x64_bin.tar.gz
+        dest: /home/devops/prabhat/jdk-22_linux-x64_bin.tar.gz
+        validate_certs: no
+        headers:
+          Cookie: "oraclelicense=accept-securebackup-cookie"
+
+   - name: Extract Java Archive
+     ansible.builtin.unarchive:
+        src: /home/devops/prabhat/jdk-22_linux-x64_bin.tar.gz
+        dest: /usr/lib/jvm
+        creates: /usr/lib/jvm/jdk-22.0.1
+    
+   - name: Remove tar file
+     file:
+        path: /home/devops/prabhat/jdk-22_linux-x64_bin.tar.gz
+        state: absent
+
+   - name: Set JAVA_HOME environment variable
+     lineinfile:
+        dest: "{{ ansible_env.HOME }}/.bashrc"
+        line: "export JAVA_HOME=/usr/lib/jvm/jdk-22.0.1"
+        create: yes
+
+   - name: Add Java binaries to PATH
+     lineinfile:
+        dest: "{{ ansible_env.HOME }}/.bashrc"
+        line: "export PATH=$PATH:/usr/lib/jvm/jdk-22.0.1/bin"
+        create: yes
+
+   - name: Update alternatives for java
+     alternatives:
+        name: java
+        path: /usr/lib/jvm/jdk-22.0.1/bin/java
+        state: present
+        priority: 2
+
+   - name: Update alternatives for javac
+     alternatives:
+        name: javac
+        path: /usr/lib/jvm/jdk-22.0.1/bin/javac
+        state: present
+        priority: 2
