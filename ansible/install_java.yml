@@ -51,3 +51,9 @@
    - name: Verify Java Installation
      shell: |
       java -version
+     register: version
+
+   - debug:
+      msg:  
+      - "Java installed Successfully!!!"
+      - "Installed java version is : {{ version }} "
