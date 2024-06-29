@@ -1,16 +1,14 @@
 ---
 - name: Install nginx on ubuntu
   hosts: localhost
-  gather_facts: yes
   become: yes
   tasks:
           - name: Install nginx
             apt:
-                  name: nginx
+                  name: nginx-core
                   state: present
                   
-          - name: Enable service
+          - name: Start nginx service
             service:
-                    name: Starting nginx service
-                    status: started
-                    enabled: true
+              name: nginx
+              state: started
