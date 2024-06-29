@@ -1,7 +1,7 @@
 ---
 - name: Install Java for Debian ubuntu
   hosts: localhost
-  become: no
+  become: yes
   tasks:
    - name: Download Java Tar file
      get_url:
