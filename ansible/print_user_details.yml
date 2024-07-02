@@ -1,0 +1,21 @@
+---
+- name: Enter User Details
+  hosts: localhost
+  gather_facts: no
+  vars_prompt:
+
+    - name: username
+      prompt: What is your username?
+      private: no
+
+    - name: country
+      prompt: What is your country?
+      private: no
+
+  tasks:
+
+    - name: Print a message
+      debug:
+        msg: 
+        - 'Logging in as {{ username }}'
+        - 'Your Country is {{ country }}'

@@ -1,0 +1,8 @@
+    java_version: "17"
+    java_base_version: "17.0.10"
+    java_download_url: "https://download.oracle.com/java/{{ java_version }}/archive/jdk-{{ java_base_version }}_linux-x64_bin.tar.gz"
+    java_download_dest: "/tmp/jdk-{{ java_base_version }}_linux-x64_bin.tar.gz"
+    java_extract_dest: "/usr/lib/jvm"
+    java_extracted_path: "/usr/lib/jvm/jdk-{{ java_base_version }}"
+    temp_download_file: "/tmp/jdk-{{ java_base_version }}_linux-x64_bin.tar.gz"
+    java_home_path: "/usr/lib/jvm/jdk-{{ java_base_version }}"
