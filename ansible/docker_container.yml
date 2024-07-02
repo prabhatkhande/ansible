@@ -1,12 +1,5 @@
 ---
 - name: Create Docker container
   hosts: localhost
-  tasks:
-    - name: Create a Docker container
-      docker_container:
-        name: my-container 
-        image: nginx:latest 
-        state: started 
-        restart_policy: no
-        ports:
-          "8080:80"
+  roles:
+    - docker-container
