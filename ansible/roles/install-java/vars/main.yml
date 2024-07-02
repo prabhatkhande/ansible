@@ -1,0 +1,7 @@
+    java_major_version: "17"
+    java_minor_version: "17.0.10"
+    java_download_dest: "/tmp/jdk-{{ java_minor_version }}_linux-x64_bin.tar.gz"
+    java_extract_dest: "/usr/lib/jvm"
+    java_extracted_path: "/usr/lib/jvm/jdk-{{ java_minor_version }}"
+    temp_download_file: "/tmp/jdk-{{ java_minor_version }}_linux-x64_bin.tar.gz"
+    java_home_path: "/usr/lib/jvm/jdk-{{ java_minor_version }}"

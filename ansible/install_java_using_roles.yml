@@ -1,0 +1,7 @@
+---
+- name: Install Java using role
+  hosts: localhost
+  gather_facts: yes
+  become: yes
+  roles:
+    - install-java 
