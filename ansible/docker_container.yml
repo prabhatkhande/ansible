@@ -1,7 +1,6 @@
 ---
 - name: Create Docker container
   hosts: localhost
-
   tasks:
     - name: Create a Docker container
       docker_container:
