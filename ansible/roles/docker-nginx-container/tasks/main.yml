@@ -1,0 +1,4 @@
+- name: Create Nginx container
+  community.docker.docker_compose:
+    project_src: roles
+    state: present

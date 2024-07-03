@@ -1,5 +1,7 @@
 ---
 - name: Create Docker container
   hosts: localhost
+  gather_facts: no
+  become: yes
   roles:
-    - docker-container
+    - docker-nginx-container
